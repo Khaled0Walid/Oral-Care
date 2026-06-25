@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oral Care | AI Receptionist Demo</title>
+    <meta
+      name="description"
+      content="A premium AI dental receptionist chat demo for Oral Care."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero-panel" aria-label="AI dental receptionist demo">
+        <div class="hero-copy">
+          <div class="eyebrow-container">
+            <div class="eyebrow">
+              <span class="live-dot"></span>
+              Live AI Receptionist Demo
+            </div>
+            <a href="index.html" class="back-link">← Back to Clinic Website</a>
+          </div>
+          <h1>Oral Care answers every patient DM in seconds.</h1>
+          <p>
+            A premium messaging demo showing how an AI receptionist handles pricing,
+            appointments, insurance, emergencies, hours, and location requests while
+            updating the clinic dashboard in real time.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-action" id="seedAppointment">Simulate booking request</button>
+            <button class="secondary-action" id="resetDemo">Reset demo</button>
+          </div>
+        </div>
+
+        <div class="demo-grid">
+          <section class="phone-wrap" aria-label="Patient messaging interface">
+            <div class="phone">
+              <div class="phone-bezel">
+                <div class="phone-notch"></div>
+                <header class="chat-header">
+                  <div class="clinic-avatar">OC</div>
+                  <div>
+                    <strong>Oral Care</strong>
+                    <span><i></i> AI receptionist online</span>
+                  </div>
+                  <button class="header-icon" aria-label="Conversation settings">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </button>
+                </header>
+
+                <div class="chat-meta">
+                  <span>Today</span>
+                  <span>Secure patient inquiry</span>
+                </div>
+
+                <div class="chat-thread" id="chatThread" aria-live="polite"></div>
+
+                <div class="quick-replies" aria-label="Quick reply examples">
+                  <button data-prompt="How much is teeth whitening?">Teeth Whitening</button>
+                  <button data-prompt="Can I book an appointment tomorrow?">Book Appointment</button>
+                  <button data-prompt="Are you open on Saturday?">Opening Hours</button>
+                  <button data-prompt="Do you accept insurance?">Insurance</button>
+                  <button data-prompt="I have a dental emergency">Emergency</button>
+                </div>
+
+                <form class="composer" id="messageForm">
+                  <input
+                    id="messageInput"
+                    type="text"
+                    autocomplete="off"
+                    placeholder="Ask about whitening, hours, insurance..."
+                    aria-label="Type a patient message"
+                  />
+                  <button type="submit" aria-label="Send message">
+                    <span>&uarr;</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <aside class="dashboard" aria-label="Live lead dashboard">
+            <div class="dashboard-card lead-card">
+              <div class="card-topline">
+                <span>Patient profile</span>
+                <strong id="dashboardStatus">New Lead</strong>
+              </div>
+              <div class="patient-identity">
+                <div class="patient-avatar">E</div>
+                <div>
+                  <span>Patient name</span>
+                  <strong id="patientName">Emma Carter</strong>
+                </div>
+              </div>
+              <dl class="lead-fields">
+                <div>
+                  <dt>Requested treatment</dt>
+                  <dd id="requestedTreatment">General inquiry</dd>
+                </div>
+                <div>
+                  <dt>Booking status</dt>
+                  <dd id="bookingStatus">Not booked yet</dd>
+                </div>
+                <div>
+                  <dt>Lead source</dt>
+                  <dd>Direct message</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="dashboard-card score-card">
+              <div class="score-ring" id="scoreRing" style="--score: 38">
+                <div>
+                  <strong id="leadScore">38</strong>
+                  <span>Lead score</span>
+                </div>
+              </div>
+              <div class="score-copy">
+                <h2>Conversation intelligence</h2>
+                <p id="scoreSummary">
+                  Waiting for intent. DentalFlow AI will qualify the patient as the
+                  conversation develops.
+                </p>
+              </div>
+            </div>
+
+            <div class="dashboard-card timeline-card">
+              <div class="card-topline">
+                <span>Automation activity</span>
+                <strong>Live</strong>
+              </div>
+              <ul id="activityList">
+                <li><span></span>Conversation opened</li>
+                <li><span></span>Clinic knowledge base loaded</li>
+                <li><span></span>Ready to qualify patient</li>
+              </ul>
+            </div>
+
+            <div class="dashboard-card metrics-card">
+              <article>
+                <span>Avg. response</span>
+                <strong>4 sec</strong>
+              </article>
+              <article>
+                <span>Availability</span>
+                <strong>24/7</strong>
+              </article>
+              <article>
+                <span>Handoff rule</span>
+                <strong>Clinical</strong>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
